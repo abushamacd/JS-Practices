@@ -15,6 +15,9 @@ let age = 22;
 age += 2;
 console.log(age);
 
+// Infinity Value
+console.log(50 / 0);
+
 /*
  Operators in js
  ---------------
