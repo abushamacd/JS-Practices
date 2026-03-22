@@ -25,3 +25,27 @@ function validateContact(contact) {
 }
 
 // console.log(validateContact("01834567890"));
+
+// Problem-03 : Admission Success Calculator
+function willSuccess(marks) {
+  if (Array.isArray(marks) && marks.length > 0) {
+    let passedSubjects = 0;
+    let faildSubjects = 0;
+    for (let mark of marks) {
+      if (mark >= 50) {
+        passedSubjects++;
+      } else {
+        faildSubjects++;
+      }
+    }
+    if (passedSubjects > faildSubjects) {
+      return true;
+    } else {
+      return false;
+    }
+  } else {
+    return "Invalid";
+  }
+}
+
+// console.log(willSuccess([65, 23, 56, 87, 34, 45, 78, 23]));
