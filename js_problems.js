@@ -10,4 +10,18 @@ function cashOut(amount) {
 
 // console.log(cashOut("2051"));
 
+// Contact Validator
+function validateContact(contact) {
+  if (
+    typeof contact === "string" &&
+    contact.length === 11 &&
+    contact.startsWith("01") &&
+    !contact.includes(" ")
+  ) {
+    return "Valid";
+  } else {
+    return "Invalid";
+  }
+}
 
+// console.log(validateContact("01834567890"));
