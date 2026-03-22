@@ -72,3 +72,32 @@ const Rahul = { name: "Rahul", gender: "male", age: 28 };
 const Joya = { name: "Joya", gender: "female", age: 19 };
 
 console.log(validProposal(Rahul, Joya));
+
+// Problem-05: Let’s Calculate Total Sleep Time
+
+function calculateSleepTime(times) {
+  if (!Array.isArray(times)) {
+    return "Invalid";
+  }
+
+  let totalSeconds = 0;
+
+  for (let time of times) {
+    if (typeof time !== "number") {
+      return "Invalid";
+    }
+    totalSeconds += time;
+  }
+
+  const hours = Math.floor(totalSeconds / 3600);
+  const minutes = Math.floor((totalSeconds % 3600) / 60);
+  const seconds = totalSeconds % 60;
+
+  return {
+    hour: hours,
+    minute: minutes,
+    second: seconds,
+  };
+}
+
+console.log(calculateSleepTime([3600, 1800, 7200]));
