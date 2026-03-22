@@ -49,3 +49,26 @@ function willSuccess(marks) {
 }
 
 // console.log(willSuccess([65, 23, 56, 87, 34, 45, 78, 23]));
+
+// Problem-04: Valid Proposal
+
+function validProposal(person1, person2) {
+  if (typeof person1 === "object" && typeof person2 === "object") {
+    const genderValid =
+      person1.gender.toLowerCase() !== person2.gender.toLowerCase();
+
+    const ageDiff = Math.abs(person1.age - person2.age);
+
+    console.log(ageDiff);
+    const ageValid = ageDiff <= 7;
+
+    return genderValid && ageValid;
+  } else {
+    return "Invalid";
+  }
+}
+
+const Rahul = { name: "Rahul", gender: "male", age: 28 };
+const Joya = { name: "Joya", gender: "female", age: 19 };
+
+console.log(validProposal(Rahul, Joya));
